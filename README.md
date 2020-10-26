@@ -1,7 +1,7 @@
 # ScreenCam
 A virtual video input device (camera) for Windows that allows to capture the desktop or specific application windows.
 
-[ScreenCam](https://github.com/59de44955ebd/ScreenCam) is a DirectShow source filter that implements a virtual camera. It's as fork of [screen-capture-recorder](https://github.com/rdp/screen-capture-recorder-to-video-windows-free), but with heavy modifications:
+[ScreenCam](https://github.com/59de44955ebd/ScreenCam) is a DirectShow source filter that implements a virtual camera. It's as fork of [screen-capture-recorder](https://github.com/rdp/screen-capture-recorder-to-video-windows-free), but with substantial modifications:
 
 * It has a settings dialog that allows to adjust its capturing parameters. To capture a specific application window, you can press button "Select Window" in this dialog, and then interactively select the window by clicking on its title bar.
 
