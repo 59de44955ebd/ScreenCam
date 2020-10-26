@@ -11,10 +11,9 @@ A virtual video input device (camera) for Windows that allows to capture the des
 
   C:\Windows\System32\rundll32.exe ScreenCam.dll,Configure
   
-  in CMD/PowerShell or a batch script.
+  in CMD/PowerShell or batch script.
 
 * It uses different CLSIDs and registry keys than screen-capture-recorder, so the filters are independant.
- can select a specific window
 
 * It supports 32, 24 and 16 bit RGB (but no YUV).
 
