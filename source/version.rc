@@ -1,0 +1,42 @@
+//==========================================================================;
+//
+//  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+//  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+//  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+//  PURPOSE.
+//
+//  Copyright (c)  Microsoft Corporation.  All Rights Reserved.
+//
+//--------------------------------------------------------------------------;
+
+#include "version.h"
+
+1 VERSIONINFO
+
+FILEVERSION		_VER_MAJORVERSION, _VER_MINORVERSION, _VER_BUGFIXVERSION, _VER_BUILDNUM
+PRODUCTVERSION	_VER_MAJORVERSION, _VER_MINORVERSION, _VER_BUGFIXVERSION, _VER_BUILDNUM
+
+FILEOS 0x40004
+FILETYPE 0x2
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904b0"
+		{
+			VALUE "CompanyName", _VER_COMPANY "\0"
+				VALUE "FileDescription", _VER_FILEDESCRIPTION "\0"
+				VALUE "FileVersion", _VER_VERSION_STRING "\0"
+				VALUE "InternalName", _VER_INTERNALNAME "\0"
+				VALUE "LegalCopyright", _VER_COPYRIGHT "\0"
+				VALUE "OriginalFilename", _VER_ORIGINALFILENAME "\0"
+				VALUE "ProductName", _VER_PRODUCTNAME "\0"
+				VALUE "ProductVersion", _VER_VERSION_STRING "\0"
+		}
+	}
+
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409 0x04B0
+	}
+}
+
