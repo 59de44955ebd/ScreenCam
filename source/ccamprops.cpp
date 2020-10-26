@@ -238,12 +238,18 @@ HRESULT CScreenCamProperties::OnActivate()
 	// Window
 	////////////////////////////////////////
 
+	// if window with HWND doesn't exist, default to desktop
+	if (!IsWindow(hwnd))
+	{
+		hwnd = NULL;
+	}
+
 	_ui64tow_s((unsigned long long)hwnd, buf, 16, 10);
 	Edit_SetText(m_hwndCtlHwnd, buf);
 
 	// get the caption
 	WCHAR caption[80];
-	if (GetWindowTextW(hwnd, caption, 80))
+	if (hwnd && GetWindowTextW(hwnd, caption, 80))
 	{
 		Edit_SetText(m_hwndCtlWindowCaption, caption);
 	}

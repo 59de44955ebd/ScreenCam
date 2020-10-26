@@ -19,7 +19,7 @@ CCamPin::CCamPin(HRESULT *phr, CCamFilter *pFilter)
 	m_hRawBitmap(NULL),
 	m_previousFrameEndTime(0)
 {
-	// Load settings from registry fps registry
+	// Load settings from registry
 	UINT fps;
 	bool bCaptureMouse;
 	UINT left, top, width, height;
@@ -35,6 +35,11 @@ CCamPin::CCamPin(HRESULT *phr, CCamFilter *pFilter)
 		&hwnd,
 		&bTrackDecoration
 	);
+	// if window with HWND doesn't exist, default to desktop
+	if (!IsWindow(hwnd))
+	{
+		hwnd = NULL;
+	}
 	put_Settings(fps, bCaptureMouse, left, top, width, height, hwnd, bTrackDecoration);
 }
 
