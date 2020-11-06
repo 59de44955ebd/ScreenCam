@@ -35,6 +35,7 @@ CCamPin::CCamPin(HRESULT *phr, CCamFilter *pFilter)
 		&hwnd,
 		&bTrackDecoration
 	);
+
 	// if window with HWND doesn't exist, default to desktop
 	if (!IsWindow(hwnd))
 	{
@@ -852,17 +853,22 @@ HRESULT CCamPin::get_Settings(
 )
 {
 	*fps = m_iFps;
-
 	*bCaptureMouse = m_bCaptureMouse;
-
-	*left = 0;
-	*top = 0;
-	*width = 0;
-	*height = 0;
-
+	if (m_hwndToTrack)
+	{
+		*left = 0;
+		*top = 0;
+		*width = 0;
+		*height = 0;
+	}
+	else
+	{
+		*left = m_rScreen.left;
+		*top = m_rScreen.top;
+		*width = m_iCaptureWidth;
+		*height = m_iCaptureHeight;
+	}
 	*hwnd = m_hwndToTrack;
-
 	*bTrackDecoration = m_bTrackDecoration;
-
 	return S_OK;
 }

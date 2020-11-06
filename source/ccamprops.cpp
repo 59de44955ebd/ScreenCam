@@ -337,7 +337,7 @@ HRESULT CScreenCamProperties::OnApplyChanges()
 	HWND hwnd = (HWND)_wtoi64(tmp);
 
 	// sanity check
-	if (!IsWindow(hwnd))
+	if (hwnd && !IsWindow(hwnd))
 	{
 		hwnd = NULL;
 		Edit_SetText(m_hwndCtlHwnd, L"0");

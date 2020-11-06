@@ -25,8 +25,9 @@ void OutputDebugStringf(const char * format, ...);
 //#undef TRACE
 //#define TRACE(...) OutputDebugStringf(__VA_ARGS__);
 
+//#define DBGS(x) OutputDebugStringA(x);
 //#define DBGW(x) OutputDebugStringW(x);
-//#define DBGI(x) {char dbg[32];sprintf_s(dbg,32,"%ld",(long)x);OutputDebugStringA(dbg);}
+#define DBGI(x) {char dbg[16];sprintf_s(dbg,16,"%ld",(long)x);OutputDebugStringA(dbg);}
 
 #define ASSERT_RAISE(cond) if(!(cond)){char b[512];sprintf_s(b, 512, "ASSERT FAILED: %ls %d", TEXT(__FILE__), __LINE__);throw std::invalid_argument(b);}
 #define ASSERT_RETURN(cond) if(!(cond)){OutputDebugStringf("ASSERT FAILED: %s %d", TEXT(__FILE__), __LINE__);return E_INVALIDARG;}
